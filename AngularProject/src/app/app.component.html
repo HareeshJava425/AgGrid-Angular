@@ -1,0 +1,25 @@
+<div>
+    <button
+      (click)="onBtExport()"
+      style="margin-bottom: 5px; font-weight: bold"
+    >
+      Export to Excel
+    </button>
+  </div>
+  <div class="example-header">
+    Selection:
+    <span id="selectedRows"></span>
+  </div>
+
+  <div class="grid-wrapper">
+    <ag-grid-angular class="ag-theme-quartz"
+            style="height: 500px; width :100%;"
+               [columnDefs]=columnDefs 
+                [rowData]=rowData
+                [defaultColDef]=defaulColDefs
+                [rowSelection] ="rowSelection"
+                (selectionChanged)=onSelectionChanged($event)
+                (gridReady)=onGridReady($event)
+              > 
+</ag-grid-angular>
+  </div>
